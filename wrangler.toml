@@ -1,0 +1,7 @@
+name = "cf-media-embed-scraper"
+main = "src/index.ts"
+compatibility_date = "2023-03-14"
+node_compat = true
+workers_dev = true
+
+browser = { binding = "MYBROWSER", type = "browser" }

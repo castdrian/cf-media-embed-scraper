@@ -1,0 +1,22 @@
+{
+  "name": "cf-media-embed-scraper",
+  "version": "1.0.0",
+  "description": "serverlessly scrape media embeds for their video source",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "wrangler dev --remote",
+    "build": "wrangler build",
+    "deploy": "wrangler publish"
+  },
+  "repository": "https://github.com/castdrian/cf-media-embed-scraper.git",
+  "author": "Adrian Castro",
+  "license": "MIT",
+  "dependencies": {
+    "@cloudflare/puppeteer": "^0.0.2-alpha",
+    "wrangler": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.3.0"
+  }
+}
