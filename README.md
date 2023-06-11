@@ -8,8 +8,12 @@ Usage requires access to the [Cloudflare Workers Browser Beta](https://blog.clou
 
 ## Usage
 
-```bash
-curl -X POST https://cf-media-embed-scraper.subdomain.workers.dev/ -d '{ "embed": "streamtape", "url": "https://streamtape.com/v/videoId/video.mp4"}'
+```text
+curl -X POST https://cf-media-embed-scraper.subdomain.workers.dev/ \
+  -d '{
+    "embed": "streamtape",
+    "url": "https://streamtape.com/v/videoId/video.mp4"
+  }'
 ```
 
 ```json
