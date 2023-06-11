@@ -22,7 +22,7 @@ curl -X POST https://cf-media-embed-scraper.subdomain.workers.dev/ \
   "data": {
     "url": "https://streamtape.com/v/videoId/video.mp4",
     "embed": "streamtape",
-    "video": "https://streamtape.com/get_video?video_id=videoId&ip=ip&token=token&expires=expires"
+    "video": "https://streamtape.com/get_video?id=videoId&expires=expiresip=ip&token=tokenY&stream=1"
   }
 }
 ```
