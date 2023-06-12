@@ -2,7 +2,7 @@ import { getScraper } from "./scrapers";
 
 export default {
     async fetch(request: Request, env: any): Promise<Response> {
-		if (request.method !== "POST") {
+		if (request.method !== "GET") {
 			return new Response(
 				"Invalid request.",
 				{
@@ -11,16 +11,16 @@ export default {
 			);
 		}
 
-		const { url, embedType } = await request.json();
-
-        if (url && embedType) {
-			const mediaUrl = await getScraper(embedType)?.fetchMedia(url, env);
+		const url = new URL(request.url);
+		const embedType = url.searchParams.get("embed");
+		const videoId = url.searchParams.get("videoid");
+		
+        if (videoId && embedType) {
+			const mediaUrl = await getScraper(embedType)?.fetchMedia(videoId, env);
 			if (mediaUrl) {
 				const responseBody = {
 					success: true,
 					data: {
-					  url: url,
-					  embed: embedType,
 					  video: mediaUrl,
 					}
 				};
@@ -48,5 +48,5 @@ export default {
 				}
             );
         }
-    },
+	}
 };

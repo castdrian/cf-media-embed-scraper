@@ -2,7 +2,8 @@ import puppeteer from "@cloudflare/puppeteer";
 
 export default {
 	type: "streamtape",
-	async fetchMedia(url: string, env: any): Promise<string|undefined> {
+	async fetchMedia(videoId: string, env: any): Promise<string|undefined> {
+		const url = `https://streamtape.com/v/${videoId}/`;
 		const browser = await puppeteer.launch(env.MYBROWSER);
 		const page = await browser.newPage();
 		await page.goto(url, { waitUntil: "domcontentloaded" });

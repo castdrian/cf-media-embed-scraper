@@ -9,19 +9,13 @@ Usage requires access to the [Cloudflare Workers Browser Beta](https://blog.clou
 ## Usage
 
 ```text
-curl -X POST https://cf-media-embed-scraper.subdomain.workers.dev/ \
-  -d '{
-    "embed": "streamtape",
-    "url": "https://streamtape.com/v/videoId/video.mp4"
-  }'
+curl "https://cf-media-embed-scraper.subdomain.workers.dev?embed=streamtape&videoid=id"
 ```
 
 ```json
 {
   "success": true,
   "data": {
-    "url": "https://streamtape.com/v/videoId/video.mp4",
-    "embed": "streamtape",
     "video": "https://streamtape.com/get_video?id=videoId&expires=expiresip=ip&token=tokenY&stream=1"
   }
 }
